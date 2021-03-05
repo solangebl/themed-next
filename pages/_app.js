@@ -42,13 +42,11 @@ function MyApp({ Component, pageProps }) {
 
 	const editor = process.env.NEXT_PUBLIC_EDIT ? <StyleEditor cssProps={Object.keys(theme)} onUpdate={handleThemeUpdate} /> : ''
 
-
 	return (
 		<ThemeProvider theme={theme}>
+			{editor}
 			<StyledPage>
 				<Component {...pageProps} />
-				{editor}
-				<input type="color" onChange={(e) => setTheme({...theme, ...{backgroundColor: e.target.value }})} />
 			</StyledPage>
 		</ThemeProvider>
 	)

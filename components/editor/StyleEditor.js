@@ -2,9 +2,7 @@ import { useState } from 'react';
 import ReactModal from 'react-modal';
 import StyleForm from './StyleForm';
 
-function StyleEditor(props) {
-
-	const {cssProps, onUpdate} = props
+function StyleEditor({cssProps, onUpdate}) {
 	
 	const [open, setOpen] = useState(false)
 
